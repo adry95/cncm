@@ -33,7 +33,7 @@
             <a href="media/download.jpg" target="self" title="Descargar CNCM" rel="noreferrer">
                 <img id="download_button" onmouseup="clickDownload()" src="media/descargar_off.png" alt="Haz clic aquí para descargar">
             </a>
-            <p class="font_pixel" id="version">- v1.o -</p>
+            <p class="font_pixel" id="version">- v1.0 -</p>
         </div>
         
         <br><br><br>
@@ -52,15 +52,29 @@
             <p>Con las cámaras se puede revisar la posición del marico.</p>
             <p>Cada 15 segundos se realiza un check de 50% de chance para arreglar una cámara rota.</p>
             <br>
+
+            <p class="wiki_section">> Baterías</p>
+            <p>El porcentaje de batería se conserva durante las cinco noches.</p>
+            <p>Decrece cada tick según la fórmula: (Factor_de_drenaje + Noche)/100.000</p>
+            <p>El valor del factor varía según las acciones del jugador:</p>
+            <ul>
+                <li>1 → Consumo pasivo (por defecto)</li>
+                <li>2 → Mirar cámaras</li>
+                <li>5 → Usar la linterna</li>
+            </ul>
+            <br>
             
             <p class="wiki_section">> Peluches</p>
             <p>Naturalmente están activos en las noches 2, 4 y 5, e intentan aparecer cada 15 segundos.</p>
-            <p>Para el cálculo de la chance de aparecer, varía según la noche. En la primera empieza con 50% y suma +10% por noche, teniendo en la quinta noche una chance del 100%.</p>
+            <p>El chance de aparición varía según la noche.<br>
+                En la primera empieza con 50% y suma +10% por noche, teniendo en la quinta noche un chance del 100%.</p>
             <p>No pueden aparecer si el jugador está mirando la cama.</p>
             <br>
             
             <p class="wiki_section">> Caja de música</p>
-            <p>Naturalmente está activa en las noches 3 y 5. Para el cálculo del máximo valor de la rueda hasta abrirse, varía según la noche. En la primera noche son 40 segundos y resta 1 segundo por noche, teniendo en la quinta noche un máximo de 35 segundos.</p>
+            <p>Naturalmente está activa en las noches 3 y 5.</p>
+            <>El valor máximo de la rueda hasta abrirse varía según la noche.<br>
+                En la primera noche son 40 segundos y resta 1 segundo por noche, teniendo en la quinta noche un máximo de 35 segundos.</p>
             <br>
 
             <p class="wiki_section">> Marico</p>
