@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinco Noches con Marico</title>
+</head>
+<body>
+    <link rel="shortcut icon" href="media/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> <!-- API de JQuery -->
+
+    <header>
+        <img id="springbonnie" src="media/cover2.png">
+        <h1 class="font_pixel">CINCO<br>NOCHES<br>CON<br>MARICO</h1>
+    </header>
+
+    <main>
+        
+        <!-- Sinopsis -->
+        <p class="font_pixel">> Solo en una cabaña, aislado de toda civilización, sin luz ni comunicaciones...</p>
+        <p class="font_pixel">> ¿...podrás sobrevivir <span class="highlight"> Cinco Noches con Marico</span>?</p>
+
+        <br><br><br>
+
+        <!-- Descarga -->
+         <p class="font_pixel header" id="text_descarga">> DESCARGA_</p>
+         <script>
+            //setInterval( change_string(descarga,"download_title"), 1000);
+         </script>
+         <div id="download">
+            <a href="media/download.jpg" target="self" title="Descargar CNCM" rel="noreferrer">
+                <img id="download_button" onmouseup="clickDownload()" src="media/descargar_off.png" alt="Haz clic aquí para descargar">
+            </a>
+            <p class="font_pixel" id="version">- v1.o -</p>
+        </div>
+        
+        <br><br><br>
+        
+        <!-- Wiki -->
+        <p class="font_pixel header" id="text_wiki">> WIKI_</p>
+        <p onclick="displayWiki()" title="Clic para mostrar/colapsar wiki" class="font_pixel" id="show_more">← Mostrar →</p>
+        <p class="font_pixel" id="spoiler">¡Contiene spoilers!</p>
+        <br>
+        <div class="font_pixel" id="wiki_display">
+            <p class="wiki_section">> Archivo de guardado</p>
+            <p>En Windows, los datos de guardado están ubicados en la ruta “C: > Users > USUARIO > AppData > Local > CINCO_NOCHES_CON_MARICO”</p>
+            <br>
+
+            <p class="wiki_section">> Cámaras</p>
+            <p>Con las cámaras se puede revisar la posición del marico.</p>
+            <p>Cada 15 segundos se realiza un check de 50% de chance para arreglar una cámara rota.</p>
+            <br>
+            
+            <p class="wiki_section">> Peluches</p>
+            <p>Naturalmente están activos en las noches 2, 4 y 5, e intentan aparecer cada 15 segundos.</p>
+            <p>Para el cálculo de la chance de aparecer, varía según la noche. En la primera empieza con 50% y suma +10% por noche, teniendo en la quinta noche una chance del 100%.</p>
+            <p>No pueden aparecer si el jugador está mirando la cama.</p>
+            <br>
+            
+            <p class="wiki_section">> Caja de música</p>
+            <p>Naturalmente está activa en las noches 3 y 5. Para el cálculo del máximo valor de la rueda hasta abrirse, varía según la noche. En la primera noche son 40 segundos y resta 1 segundo por noche, teniendo en la quinta noche un máximo de 35 segundos.</p>
+            <br>
+
+            <p class="wiki_section">> Marico</p>
+            <p>Marico puede tardar en moverse entre cámaras de 1 a 4 segundos.</p>
+            <p>Dependiendo de dónde se encuentre marico, cada 6 segundos tendrá un intento de movimiento hacia unos lugares preestablecidos:</p>
+            <ul>
+                <li>Entrada → (20% + IA/20) → Pasillo</li>
+                <li>Pasillo → (20%) → Salón principal</li>
+                <li>Pasillo → (-20% + IA/20) → Pasillo 2</li>
+                <li>Salón principal → (10% + IA/20) → Patio</li>
+                <li>Salón principal → (25% - IA/20) → Pasillo</li>
+                <li>Patio → (25% - IA/20) → Salón principal</li>
+                <li>Patio → (IA/20) → Ventana</li>
+                <li>Pasillo 2 → (30% - IA/20) → Entrada/Pasillo</li>
+                <li>Pasillo 2 → (10% + IA/20) → Puerta</li>
+            </ul>
+            <p>Si ninguna de estas condiciones se cumple o la probabilidad es negativa, el marico no se mueve.</p>
+            <br>
+            <p>Nivel de IA determinado por noche según la ecuación: 31^((noche-1)/7) + 0.7</p>
+            <table>
+                <tr>
+                    <td>Noche</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>Nivel IA</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>5</td>
+                    <td>7</td>
+                </tr>
+            </table>
+            <br>
+
+            <p>Una vez el marico llegue a la habitación, será muerte instantánea.
+                Sin embargo, si el jugador está mirando cámaras, se esconderá detrás de estas hasta que el jugador las baje.
+                Como el marico no las puede bajar, se generará un duelo contrarreloj hasta que la noche se acabe.
+                Desde entonces, la batería se drenará más rápido y se aumentará un +20% la aparición de Phantoms.</p>
+            <br>
+
+            <p class="wiki_section">> Phantoms</p>
+            <p>Existen cuatro tipos de Phantom:</p>
+            <ul>
+                <li>Slender: Inhabilita al jugador de cualquier acción ocupando toda la pantalla por 7 segundos.<br>
+                    Se activa tras mirarle en cámaras por más de (1,5-Noche*0,1) segundos.</li>
+                <br>
+                <li>Jumper: Drena un -1,25% de batería.<br>
+                    Se activa tras mirarle en cámaras por más de (1,5-Noche*0,1) segundos.</li>
+                <br>
+                <li>Cam Breaker: Rompe la cámara donde se ubicaba.<br>
+                    Se activa tras mirarle en esta misma cámara por más de (1,5-Noche*0,1) segundos.</li>
+                <br>
+                <li>Rizzler: Funciona distinto al resto de Phantoms.<br>
+                    Reproduce un video aleatorio e impide el cambio de CAMs por 1 segundo. Al terminarse de reproducir el vídeo, salta a otra CAM aleatoria.<br>
+                    Existe un 10% de probabilidad de que aparezca este en vez de uno regular.<br>
+                    No genera penalización.</li>
+            </ul>
+            <br>
+
+            <p class="wiki_section">> Eventos</p>
+            <p>Al comenzar la noche, 10% de que sea noche lluviosa. Esto implica:</p>
+            <ul>
+                <li>Se escucha tormenta</li>
+                <li>No suenan sonidos ambiente de búhos, grillos…</li>
+                <li>CAM 04 deshabilitada durante toda la noche</li>
+            </ul>
+            <br>
+            <p>Cada tick, 0,01% de que aparezca en pantalla IT'S ME. Dura 5 segundos.</p>
+               
+
+
+
+        </div>
+
+    </main>
+    
+    <br><br><br>
+    <footer class="font_pixel">
+        Hecho por el maricón de La Candelaria
+    </footer>
+    <br><br><br>
+</body>
+</html>
