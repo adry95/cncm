@@ -86,15 +86,19 @@
             <p>Marico puede tardar en moverse entre cámaras de 1 a 4 segundos.</p>
             <p>Dependiendo de dónde se encuentre marico, cada 6 segundos tendrá un intento de movimiento hacia unos lugares preestablecidos:</p>
             <ul>
-                <li>Entrada → (20% + IA/20) → Pasillo</li>
-                <li>Pasillo → (20%) → Salón principal</li>
-                <li>Pasillo → (-20% + IA/20) → Pasillo 2</li>
-                <li>Salón principal → (10% + IA/20) → Patio</li>
-                <li>Salón principal → (25% - IA/20) → Pasillo</li>
-                <li>Patio → (25% - IA/20) → Salón principal</li>
-                <li>Patio → (IA/20) → Ventana</li>
-                <li>Pasillo 2 → (30% - IA/20) → Entrada/Pasillo</li>
-                <li>Pasillo 2 → (10% + IA/20) → Puerta</li>
+                <li>Entrada         → [20% + (IA/20)·10%]   → Pasillo</li>
+                
+                <li>Pasillo         → [20%]                 → Salón principal</li>
+                <li>Pasillo         → [20% + (IA/20)·10%]        → Pasillo 2</li>
+
+                <li>Salón principal → [10% + (IA/20)·10%]         → Patio</li>
+                <li>Salón principal → [25% - (IA/20)·20%]         → Pasillo</li>
+                
+                <li>Patio           → [25% - (IA/20)·20%]         → Salón principal</li>
+                <li>Patio           → [(IA/20)·20%]               → Ventana</li>
+                
+                <li>Pasillo 2       → [30% - (IA/20)·20%]         → Entrada/Pasillo</li>
+                <li>Pasillo 2       → [10% + (IA/20)·10%]         → Puerta</li>
             </ul>
             <p>Si ninguna de estas condiciones se cumple o la probabilidad es negativa, el marico no se mueve.</p>
             <br>
