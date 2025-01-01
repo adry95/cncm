@@ -46,8 +46,8 @@
             <br>
 
             <p class="wiki_section">> Cámaras</p>
-            <p>Con las cámaras se puede revisar la posición del marico.</p>
-            <p>Cada 15 segundos se realiza un check de 50% de chance para arreglar una cámara rota.</p>
+            <p>Con las cámaras se puede revisar la posición del marico dentro de la cabaña.</p>
+            <p>Cada 15 segundos, 50% de chance para arreglar una cámara rota.</p>
             <br>
 
             <p class="wiki_section">> Baterías</p>
@@ -62,26 +62,28 @@
             <br>
             
             <p class="wiki_section">> Peluches</p>
-            <p>Naturalmente están activos en las noches 2, 4 y 5, e intentan aparecer cada 15 segundos.</p>
-            <p>El chance de aparición varía según la noche.<br>
-                En la primera empieza con 50% y suma +10% por noche, teniendo en la quinta noche un chance del 100%.</p>
-            <p>No pueden aparecer si el jugador está mirando la cama.</p>
+            <p>Naturalmente, activos en las noches 2, 4 y 5.<br>
+                Frecuencia de aparición: 15 segundos.</p>
+            <p>Chance de aparición: varía según la noche.<br>
+                → Noche 1: 50% — +10% por noche; Noche 5: 100%.</p>
+            <p>No aparecen si el jugador está mirando la cama.</p>
             <br>
             <p>Una vez empiezan a bailar, no se pueden parar y es solo cuestión de tiempo que aparezca el marico.<br>
-                La chance por tick es: IA*0,01%</p>
+                → Chance por tick: IA*0,01%</p>
             <br>
             
             <p class="wiki_section">> Caja de música</p>
-            <p>Naturalmente está activa en las noches 3 y 5.</p>
-            <p>El valor máximo de la rueda hasta abrirse varía según la noche.<br>
-                En la primera noche son 40 segundos y resta 1 segundo por noche, teniendo en la quinta noche un máximo de 35 segundos.</p>
+            <p>Naturalmente, activa en las noches 3 y 5.</p>
+            <p>Tiempo máximo del temporizador: varía según la noche.<br>
+                → Noche 1: 40s — -1s por noche; Noche 5: 35 segundos.</p>
             <br>
-            <p>Si la caja se abre, se puede volver a cerrar. Si se deja abierta, puede aparecer el marico.<br>
-                La chance por tick es: IA*0,01%</p>
+            <p>Si la caja se abre, se puede volver a cerrar.</p>
+            <p>Si se deja abierta, puede aparecer el marico.<br>
+                → La chance por tick es: IA*0,01%</p>
 
             <p class="wiki_section">> Marico</p>
-            <p>Marico puede tardar en moverse entre cámaras de 1 a 4 segundos.</p>
-            <p>Dependiendo de dónde se encuentre marico, cada 6 segundos tendrá un intento de movimiento hacia unos lugares preestablecidos:</p>
+            <p>Duración de mov. entre cámaras: de 1 a 4 segundos.</p>
+            <p>Cada 6s tendrá un intento de movimiento hacia unos lugares preestablecidos:</p>
             <img src="media/esquema prob mov marico.png" alt="Esquema de probabilidades de mov. del marico">
             <p>Si ninguna de estas condiciones se cumple o la probabilidad es negativa, el marico no se mueve.</p>
             <br>
@@ -147,8 +149,7 @@
                 <li>CAM 04 deshabilitada durante toda la noche</li>
             </ul>
             <br>
-            <p>Cada tick, 0,01% de que aparezca en pantalla IT'S ME. Dura 5 segundos.</p>
-               
+            
 
 
 
