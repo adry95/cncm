@@ -99,3 +99,7 @@ footer{
 .wiki_section{
     text-decoration: underline;
 }
+.img_wiki{
+    margin-left: auto;
+    margin-right: auto;
+}
