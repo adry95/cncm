@@ -26,9 +26,6 @@
 
         <!-- Descarga -->
          <p class="font_pixel header" id="text_descarga">> DESCARGA_</p>
-         <script>
-            //setInterval( change_string(descarga,"download_title"), 1000);
-         </script>
          <div id="download">
             <a href="media/download.jpg" target="self" title="Descargar CNCM" rel="noreferrer">
                 <img id="download_button" onmouseup="clickDownload()" src="media/descargar_off.png" alt="Haz clic aquí para descargar">
@@ -85,39 +82,33 @@
             <p class="wiki_section">> Marico</p>
             <p>Marico puede tardar en moverse entre cámaras de 1 a 4 segundos.</p>
             <p>Dependiendo de dónde se encuentre marico, cada 6 segundos tendrá un intento de movimiento hacia unos lugares preestablecidos:</p>
-            <ul>
-                <li>Entrada         → [20% + (IA/20)·10%]   → Pasillo</li>
-                
-                <li>Pasillo         → [20%]                 → Salón principal</li>
-                <li>Pasillo         → [20% + (IA/20)·10%]        → Pasillo 2</li>
-
-                <li>Salón principal → [10% + (IA/20)·10%]         → Patio</li>
-                <li>Salón principal → [25% - (IA/20)·20%]         → Pasillo</li>
-                
-                <li>Patio           → [25% - (IA/20)·20%]         → Salón principal</li>
-                <li>Patio           → [(IA/20)·20%]               → Ventana</li>
-                
-                <li>Pasillo 2       → [30% - (IA/20)·20%]         → Entrada/Pasillo</li>
-                <li>Pasillo 2       → [10% + (IA/20)·10%]         → Puerta</li>
-            </ul>
+            <!-- AÑADIR IMAGEN -->
             <p>Si ninguna de estas condiciones se cumple o la probabilidad es negativa, el marico no se mueve.</p>
             <br>
             <p>Nivel de IA determinado por noche según la ecuación: 31^((noche-1)/7) + 0.7</p>
             <table>
                 <tr>
-                    <td>Noche</td>
+                    <td>Noche →</td>
+                    <td>Nivel IA</td>
+                </tr>
+                <tr>
+                    <td>1 →</td>
                     <td>1</td>
+                </tr>
+                <tr>
+                    <td>2 →</td>
                     <td>2</td>
+                </tr>
+                <tr>
+                    <td>3 →</td>
                     <td>3</td>
-                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>4 →</td>
                     <td>5</td>
                 </tr>
                 <tr>
-                    <td>Nivel IA</td>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>5</td>
+                    <td>5 →</td>
                     <td>7</td>
                 </tr>
             </table>
